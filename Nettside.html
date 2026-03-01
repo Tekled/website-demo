@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NærMat</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #f6f5f2;
+  color: #2f3e2f;
+}
+
+/* HEADER */
+header {
+  background: #3f6b4f;
+  color: white;
+  padding: 18px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  color: white;
+  margin-left: 25px;
+  text-decoration: none;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 420px;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Fade */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(246,245,242,0.95) 40%, rgba(246,245,242,0.2));
+}
+
+.hero-text {
+  position: relative;
+  z-index: 2;
+  padding: 70px;
+}
+
+.hero-text h1 {
+  font-size: 42px;
+}
+
+.search-box {
+  margin-top: 25px;
+  display: flex;
+}
+
+.search-box input {
+  padding: 14px;
+  width: 250px;
+  border: none;
+  border-radius: 8px 0 0 8px;
+}
+
+.search-box button {
+  padding: 14px 20px;
+  background: #3f6b4f;
+  color: white;
+  border: none;
+  border-radius: 0 8px 8px 0;
+}
+
+/* FEATURES STRIPE */
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  padding: 15px;
+  background: #f0eee9;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+
+/* SECTION */
+.section {
+  padding: 50px;
+}
+
+/* CARDS */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.card {
+  background: white;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card h3 {
+  padding: 15px;
+}
+
+/* BUTTON */
+.center-btn {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.center-btn button {
+  padding: 12px 20px;
+  background: #3f6b4f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+}
+
+/* MAP */
+.map-section {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 30px;
+}
+
+.box {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.map-box img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+/* PRODUCTS */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.product {
+  background: white;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.product img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.product-content {
+  padding: 12px;
+}
+
+.price {
+  color: #3f6b4f;
+  font-weight: bold;
+}
+
+.btn {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  background: #3f6b4f;
+  color: white;
+  border: none;
+  border-radius: 6px;
+}
+
+/* NEWSLETTER */
+.newsletter {
+  background: #3f6b4f;
+  color: white;
+  padding: 50px;
+  text-align: center;
+}
+
+.newsletter input {
+  padding: 12px;
+  width: 250px;
+  border-radius: 6px;
+  border: none;
+}
+
+/* FOOTER */
+footer {
+  background: #2e4a38;
+  color: white;
+  padding: 30px;
+  text-align: center;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h2>NærMat</h2>
+  <nav>
+    <a href="#">Om oss</a>
+    <a href="#">Kontakt oss</a>
+    <a href="#">For produsenter</a>
+    <a href="#">Abonnementer</a>
+    <a href="#">Handlekurv</a>
+    <a href="#">Min side</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-text">
+    <h1>Kortreist mat rett fra produsenter nær deg</h1>
+    <p>Finn og forhåndsbestill lokalt – enkelt og trygt.</p>
+
+    <div class="search-box">
+      <input placeholder="Hva leter du etter?">
+      <button>Søk</button>
+    </div>
+  </div>
+
+  <img src="fruktkurv.jpeg">
+</section>
+
+<!-- FEATURES STRIPE -->
+<section class="features">
+  <div class="feature">🛒 Enkel betaling</div>
+  <div class="feature">📍 Velg hentepunkt eller levering</div>
+  <div class="feature">🌱 Støtt lokale produsenter</div>
+  <div class="feature">🐑 Kvalitet og dyrevelferd</div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="section">
+  <h2>Utforsk lokale matvarer</h2>
+
+  <div class="cards">
+    <div class="card">
+      <img src="kjøtt.jpg">
+      <h3>Ferskt kjøtt</h3>
+    </div>
+
+    <div class="card">
+      <img src="egg.jpg">
+      <h3>Egg</h3>
+    </div>
+
+    <div class="card">
+      <img src="kål.jpg">
+      <h3>Frukt & grønt</h3>
+    </div>
+
+    <div class="card">
+      <img src="ost.jpg">
+      <h3>Ost & meieri</h3>
+    </div>
+  </div>
+
+  <div class="center-btn">
+    <button>Se alle produkter</button>
+  </div>
+</section>
+
+<!-- MAP -->
+<section class="section map-section">
+  <div>
+    <h3>Finn NærMat nær deg</h3>
+
+    <div class="box"> Utleveringssteder</div>
+    <div class="box"> Produkter</div>
+    <div class="box"> Produsenter</div>
+    <div class="box"> Pris</div>
+
+    <h4>Kommende utleveringer:</h4>
+    <div class="box">Stange parkering – Onsdag 17:30</div>
+    <div class="box">Vik parkering – Torsdag 18:00</div>
+  </div>
+
+  <div class="map-box">
+    <img src="kart.avif">
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="section">
+  <h2>Populært nå</h2>
+
+  <div class="product-grid">
+
+    <div class="product">
+      <img src="egg.jpg">
+      <div class="product-content">
+        <h4>Vik egg</h4>
+        <p class="price">Kr 65</p>
+        <button class="btn">Bestill</button>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="syltetøy.jpg">
+      <div class="product-content">
+        <h4>Stange bringebærsyltetøy</h4>
+        <p class="price">Kr 80</p>
+        <button class="btn">Bestill</button>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="kjøttpølse.avif">
+      <div class="product-content">
+        <h4>Slakterens lammepølser</h4>
+        <p class="price">Kr 120 per kilo</p>
+        <button class="btn">Bestill</button>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="grønnsakspakke.jpg">
+      <div class="product-content">
+        <h4>Grønnsakspakke</h4>
+        <p class="price">Fra kr 150</p>
+        <button class="btn">Bestill</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- UKENS PRODUSENT -->
+<section class="section">
+  <h2>Ukens produsent</h2>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: center;">
+    
+    <img src="Stange.jpg" style="width:100%; border-radius:12px;">
+
+    <div>
+      <h3>Stange gård</h3>
+      <p>
+        En liten lokal gård kjent for sine ferske bær og bærekraftige drift.
+        Her får du kortreist kvalitet rett fra hagen.
+      </p>
+
+      <button class="btn" style="background:#ddd; color:#333; margin-top:10px;">Les mer</button>
+      <button class="btn">Se produkter</button>
+    </div>
+
+  </div>
+</section>
+
+<section class="newsletter">
+  <h2>Abonner på nyheter og tilbud</h2>
+  <input placeholder="Din e-postadresse">
+  <button class="btn">Meld meg på</button>
+</section>
+
+<footer>
+  <p>© 2026 NærMat – Kortreist glede</p>
+</footer>
+
+</body>
+</html>
